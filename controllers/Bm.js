@@ -9,6 +9,16 @@ exports.getAll = async (req, res) => {
   }
 };
 
+exports.getOne = async (req, res) => {
+  console.log(req.params);
+  try {
+    const datas = await bmService.getOne(req.params.id);
+    res.json({ data: datas, status: "success" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
 exports.create = async (req, res) => {
   try {
     const data = await bmService.create(req.body);
