@@ -8,6 +8,7 @@ const fbSchema = new Schema({
   Mobile: String,
   Websites: String,
   cookie: Object,
+  ip: String,
   createdAt: {
     type: Date,
     default: Date.now,
